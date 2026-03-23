@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificacion de caracteres -->
+  <meta charset="UTF-8" />
+  <!-- Configuracion para hacer la página responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título de la pestaña -->
+  <title>Padelation 24H </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Carga del archivo CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#inicio" class="nav-logo">Padel<span>ation</span></a>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#actividades">Actividades</a></li>
+      <li><a href="#tarifas">Tarifas</a></li>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#donde-estamos">Ubicación</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#reservas" class="nav-cta">Reservar</a></li>
+    </ul>
+  </nav>
+  
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-tag">Escríbenos</div>
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-form-grid">
+        <div class="form-info">
+          <p class="section-desc">¿Tienes alguna duda sobre reservas, tarifas o franquicias? Escríbenos y te respondemos lo antes posible.</p>
+          <div class="form-highlight">
+            <h4>📞 Para urgencias</h4>
+            <p>Si tienes algún problema urgente con la instalación, llámanos directamente al <strong>653 148 942</strong>.</p>
+          </div>
+          <div class="form-highlight" style="margin-top:1rem;border-left-color:var(--green)">
+            <h4>🤝 ¿Interesado en franquicias?</h4>
+            <p>Si quieres abrir tu propio centro Padelation, indica "Franquicia" en el asunto del mensaje y te lo explicamos todo.</p>
+          </div>
+        </div>
+        <form action="mailto:contacto@padelation.es" method="GET" onsubmit="return handleForm(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto">
+              <option value="">Selecciona un tema...</option>
+              <option>Información sobre reservas</option>
+              <option>Tarifas y precios</option>
+              <option>Franquicias</option>
+              <option>Incidencia en la instalación</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="body" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar mensaje →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#inicio" class="footer-logo">Padel<span>ation</span></a>
+    <p>Camino Ralenco S/N · CP 50.410 · Cuarte de Huerva, Zaragoza</p>
+    <p><a href="tel:653148942">653 148 942</a> &nbsp;·&nbsp; <a href="mailto:contacto@padelation.es">contacto@padelation.es</a></p>
+    <div class="footer-bottom">
+      © 2025 Padelation · Todos los derechos reservados · Abiertos 24h, 365 días al año
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+
+
+</body>
+</html>
