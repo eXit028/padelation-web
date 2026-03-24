@@ -527,53 +527,50 @@ section { padding: 5rem 2rem; }
   background: var(--white);
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  gap: 1rem;
+/* ===== SLIDER ===== */
+.slider-wrap {
   margin-top: 3rem;
+  max-width: 65%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.gallery-item {
-  background: var(--cream);
+.slider {
+  position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  position: relative;
-  transition: transform .2s;
 }
-.gallery-item:hover { transform: scale(1.02); }
-.gallery-item.big {
-  grid-column: span 2;
+
+.slider-track {
+  position: relative;
   aspect-ratio: 16/9;
 }
 
-/* Placeholder court visuals */
-.gallery-item.court-1 {
-  background: linear-gradient(135deg, #1a5c35 0%, #2e7d52 50%, #1a5c35 100%);
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
 }
-.gallery-item.court-2 {
-  background: linear-gradient(135deg, #0d2b1a 0%, #1a5c35 100%);
-}
-.gallery-item.court-3 {
-  background: linear-gradient(135deg, #2e7d52 0%, #4aab73 100%);
-}
-.gallery-item.court-4 {
-  background: linear-gradient(135deg, #1a5c35 0%, #0d2b1a 100%);
-}
-.gallery-item.court-5 {
-  background: linear-gradient(135deg, #4aab73 0%, #2e7d52 100%);
-}
+.slide.active { opacity: 1; pointer-events: auto; }
 
-.gallery-label {
+/* Placeholder court visuals */
+.slide.court-1 { background: linear-gradient(135deg, #1a5c35 0%, #2e7d52 50%, #1a5c35 100%); }
+.slide.court-2 { background: linear-gradient(135deg, #0d2b1a 0%, #1a5c35 100%); }
+.slide.court-3 { background: linear-gradient(135deg, #2e7d52 0%, #4aab73 100%); }
+.slide.court-4 { background: linear-gradient(135deg, #1a5c35 0%, #0d2b1a 100%); }
+.slide.court-5 { background: linear-gradient(135deg, #4aab73 0%, #2e7d52 100%); }
+
+.slide-label {
   position: absolute;
   bottom: 1rem; left: 1rem;
-  background: rgba(13,43,26,0.85);
+  background: var(--info-box);
   color: var(--white);
   font-size: 0.78rem;
   font-weight: 800;
@@ -582,28 +579,52 @@ section { padding: 5rem 2rem; }
   border-radius: 50px;
 }
 
-.gallery-placeholder-svg {
-  width: 60%;
-  height: 60%;
+.slider-placeholder-svg {
+  width: 40%;
+  height: 55%;
   opacity: 0.25;
 }
 
-.features-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-.feature-chip {
-  background: var(--cream);
-  border-radius: 50px;
-  padding: .5rem 1.2rem;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--green);
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.35);
+  color: var(--white);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: .5rem;
+  justify-content: center;
+  transition: background .2s;
+}
+.slider-btn:hover { background: rgba(0,0,0,0.6); }
+.slider-prev { left: 1rem; }
+.slider-next { right: 1rem; }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  padding: .9rem 0 .2rem;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.dot.active {
+  background: var(--purple);
+  transform: scale(1.35);
 }
 
 
@@ -791,11 +812,6 @@ footer a:hover { text-decoration: underline; }
   .map-inner,
   .contact-form-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .gallery-item.big { grid-column: span 2; }
-
   .form-row { grid-template-columns: 1fr; }
 
   .map-embed { height: 260px; }
@@ -804,7 +820,5 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 560px) {
   nav { padding: 0 1.2rem; }
   section { padding: 3.5rem 1.2rem; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item.big { grid-column: span 1; aspect-ratio: 4/3; }
   .hero-stats { gap: 2rem; }
 }

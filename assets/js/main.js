@@ -117,10 +117,36 @@ function initContactForm() {
 }
 
 // =============================================
+// SLIDER DE INSTALACIONES
+// =============================================
+
+function initSlider() {
+  const slider = document.querySelector('.slider');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dots .dot');
+  let current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  slider.querySelector('.slider-prev').addEventListener('click', () => goTo(current - 1));
+  slider.querySelector('.slider-next').addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+}
+
+// =============================================
 // INIT
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
   loadComponents();
   initContactForm();
+  initSlider();
 });
