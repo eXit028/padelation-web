@@ -43,6 +43,10 @@ function fixNavLinks() {
       link.setAttribute('href', `${base}${cleanHref}`);
     }
   });
+
+  // Fix ruta del logo según si estamos en raíz o pages/
+  const logoImg = document.querySelector('#nav-placeholder .nav-logo-img');
+  if (logoImg) logoImg.src = `${base}assets/images/logo/logo_web.png`;
 }
 
 // =============================================

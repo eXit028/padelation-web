@@ -41,14 +41,8 @@ nav {
   backdrop-filter: blur(8px);
 }
 
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  color: var(--white);
-  letter-spacing: 2px;
-  text-decoration: none;
-}
-.nav-logo span { color: var(--accent); }
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo-img { height: 52px; width: auto; display: block; filter: brightness(0) invert(1); }
 
 .nav-links {
   display: flex;
@@ -83,18 +77,8 @@ nav {
 #inicio {
   min-height: 100vh;
   background:
-    linear-gradient(160deg, rgba(13,43,26,0.88) 0%, rgba(26,92,53,0.72) 60%, rgba(232,168,32,0.18) 100%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px,
-      transparent 1px, transparent 80px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px,
-      transparent 1px, transparent 80px
-    ),
-    linear-gradient(135deg, #0d2b1a 0%, #1a5c35 50%, #0d2b1a 100%);
+    linear-gradient(rgba(255, 255, 255, 0.477), rgba(255, 255, 255, 0.477)),
+    linear-gradient(135deg, var(--purple-ligth), var(--accent));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,15 +88,6 @@ nav {
   overflow: hidden;
 }
 
-/* Decorative court lines */
-#inicio::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 120%, rgba(232,168,32,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
 
 .hero-badge {
   display: inline-block;
@@ -129,16 +104,14 @@ nav {
   animation: fadeDown .6s ease both;
 }
 
-.hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 11vw, 9rem);
-  color: var(--white);
-  line-height: 0.95;
-  letter-spacing: 2px;
-  margin-bottom: 0.2em;
+.hero-logo {
+  height: clamp(6rem, 16vw, 14rem);
+  width: auto;
+  display: block;
+  margin: 0 auto 2rem;
+  filter: none;
   animation: fadeDown .7s .1s ease both;
 }
-.hero-title span { color: var(--accent); }
 
 .hero-sub {
   font-size: clamp(1rem, 2.5vw, 1.35rem);
@@ -160,23 +133,23 @@ nav {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--green-dark);
+  color: var(--text);
   padding: .9rem 2.2rem;
   border-radius: 50px;
   font-weight: 800;
   font-size: 1rem;
   text-decoration: none;
   transition: background .2s, transform .15s, box-shadow .2s;
-  box-shadow: 0 4px 24px rgba(232,168,32,0.35);
+  box-shadow: 0 4px 24px var(--purple-ligth);
 }
 .btn-primary:hover {
-  background: var(--accent-dark);
+  background: var(--cream);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(232,168,32,0.45);
+  box-shadow: 0 8px 32px var(--accent-dark);
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.194);
   color: var(--white);
   padding: .9rem 2.2rem;
   border-radius: 50px;
@@ -206,7 +179,7 @@ nav {
 .stat-value {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem;
-  color: var(--accent);
+  color: var(--purple);
   line-height: 1;
 }
 .stat-label {
@@ -214,7 +187,7 @@ nav {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: var(--white);
   margin-top: .3rem;
 }
 
@@ -271,13 +244,13 @@ section { padding: 5rem 2rem; }
 }
 .step-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(26,92,53,0.12);
+  box-shadow: 0 12px 40px var(--purple-ligth);
 }
 .step-card::before {
   content: attr(data-num);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 7rem;
-  color: rgba(26,92,53,0.06);
+  color: rgba(0, 0, 0, 0.06);
   position: absolute;
   top: -1rem;
   right: .5rem;
@@ -288,7 +261,7 @@ section { padding: 5rem 2rem; }
 .step-icon {
   width: 52px;
   height: 52px;
-  background: var(--green);
+  background: var(--purple-ligth);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -311,7 +284,7 @@ section { padding: 5rem 2rem; }
 
 /* ===== ACTIVIDADES ===== */
 #actividades {
-  background: var(--green-dark);
+  background: var(--accent-dark);
   position: relative;
   overflow: hidden;
 }
@@ -321,7 +294,7 @@ section { padding: 5rem 2rem; }
   inset: 0;
   background: repeating-linear-gradient(
     45deg,
-    rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px,
+    rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px,
     transparent 1px, transparent 40px
   );
   pointer-events: none;
@@ -335,16 +308,16 @@ section { padding: 5rem 2rem; }
 }
 
 .act-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: var(--radius);
   padding: 2rem 1.8rem;
   transition: background .2s, border-color .2s, transform .2s;
   cursor: default;
 }
 .act-card:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(232,168,32,0.4);
+  background: var(--accent);
+  border-color: var(--accent);
   transform: translateY(-3px);
 }
 
