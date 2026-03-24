@@ -1,15 +1,17 @@
 :root {
-  --green-dark: #0d2b1a;
-  --green:      #1a5c35;
-  --green-mid:  #2e7d52;
-  --green-light:#4aab73;
-  --accent:     #ffcc00;
-  --accent-dark:#ec7724;
-  --purple:     #74195f;
-  --cream:      #f7f2e8;
-  --white:      #ffffff;
-  --text:       #1a1a1a;
-  --text-muted: #5a6a5e;
+  --green-dark:   #0d2b1a;
+  --green:        #1a5c35;
+  --green-mid:    #2e7d52;
+  --green-light:  #4aab73;
+  --accent:       #ffcc00;
+  --accent-dark:  #ec7724;
+  --red:          #ff0000;
+  --purple:       #74195f;
+  --purple-ligth: #CD75AA;
+  --cream:        #f7f2e8;
+  --white:        #ffffff;
+  --text:         #1a1a1a;
+  --text-muted:   #5a6a5e;
   --radius:     12px;
 }
 
@@ -65,14 +67,14 @@ nav {
 
 .nav-cta {
   background: var(--accent);
-  color: var(--green-dark) !important;
+  color: var(--text) !important;
   padding: .45rem 1.2rem;
   border-radius: 50px;
   font-weight: 800 !important;
   transition: background .2s, transform .15s !important;
 }
 .nav-cta:hover {
-  background: var(--accent-dark) !important;
+  background: var(--cream) !important;
   transform: scale(1.04);
 }
 
@@ -224,7 +226,7 @@ section { padding: 5rem 2rem; }
   font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--green-mid);
+  color: var(--purple);
   margin-bottom: .6rem;
 }
 
@@ -349,6 +351,46 @@ section { padding: 5rem 2rem; }
 .act-card h3 { color: var(--white); font-size: 1.15rem; font-weight: 800; margin-bottom: .5rem; }
 .act-card p { color: rgba(255,255,255,0.62); font-size: 0.9rem; line-height: 1.6; }
 
+/* ===== AVISO TARIFAS ===== */
+.tarifas-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.tarifas-header-row > div:first-child {
+  flex: 1;
+  min-width: 200px;
+}
+.aviso-reservas {
+  background: var(--red);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  max-width: 340px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px var(--red);
+}
+.aviso-titulo {
+  font-weight: 800;
+  color: var(--white);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+.aviso-reservas ul {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.aviso-reservas li {
+  font-size: 0.88rem;
+  color: var(--white);
+  line-height: 1.5;
+}
+
 /* ===== TARIFAS ===== */
 #tarifas {
   background: var(--cream);
@@ -369,12 +411,12 @@ section { padding: 5rem 2rem; }
   transition: box-shadow .2s, transform .2s;
 }
 .tarifa-card:hover {
-  box-shadow: 0 8px 40px rgba(26,92,53,0.13);
+  box-shadow: 0 8px 40px var(--purple-ligth);
   transform: translateY(-3px);
 }
 
 .tarifa-header {
-  background: var(--green);
+  background: var(--accent-dark);
   color: var(--white);
   padding: 1.4rem 1.8rem;
 }
@@ -420,7 +462,7 @@ section { padding: 5rem 2rem; }
 .tarifa-price .amount {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
-  color: var(--green);
+  color: var(--text);
   line-height: 1;
 }
 .tarifa-price .duration {
