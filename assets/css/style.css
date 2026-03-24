@@ -5,7 +5,6 @@
   --green-light:  #4aab73;
   --accent:       #ffcc00;
   --accent-dark:  #ec7724;
-  --red:          #ff0000;
   --purple:       #74195f;
   --purple-ligth: #CD75AA;
   --cream:        #f7f2e8;
@@ -338,12 +337,12 @@ section { padding: 5rem 2rem; }
   min-width: 200px;
 }
 .aviso-reservas {
-  background: var(--red);
+  background: var(--purple);
   border-radius: var(--radius);
   padding: 1.2rem 1.5rem;
   max-width: 340px;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px var(--red);
+  box-shadow: 0 4px 16px var(--purple-ligth);
 }
 .aviso-titulo {
   font-weight: 800;
@@ -611,7 +610,7 @@ section { padding: 5rem 2rem; }
   display: grid;
   grid-template-columns: 1fr 1.6fr;
   gap: 4rem;
-  align-items: start;
+  align-items: stretch;
   padding-bottom: 5rem;
 }
 
@@ -655,7 +654,8 @@ section { padding: 5rem 2rem; }
 .map-embed {
   border-radius: var(--radius);
   overflow: hidden;
-  height: 360px;
+  height: 100%;
+  min-height: 360px;
   box-shadow: 0 8px 40px var(--purple-ligth);
 }
 .map-embed iframe {
