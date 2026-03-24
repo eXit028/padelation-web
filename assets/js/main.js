@@ -83,15 +83,17 @@ function initSmoothScroll() {
 // =============================================
 // NAV: cambio de fondo al hacer scroll
 // =============================================
-
 function initNavScroll() {
   const nav = document.querySelector('nav');
   if (!nav) return;
 
+  const baseColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--accent-dark').trim();
+
   window.addEventListener('scroll', () => {
     nav.style.background = window.scrollY > 40
-      ? 'rgba(13,43,26,0.98)'
-      : 'rgba(13,43,26,0.95)';
+      ? `${baseColor}f7`
+      : baseColor;
   });
 }
 

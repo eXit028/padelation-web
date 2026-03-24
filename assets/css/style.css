@@ -3,8 +3,9 @@
   --green:      #1a5c35;
   --green-mid:  #2e7d52;
   --green-light:#4aab73;
-  --accent:     #e8a820;
-  --accent-dark:#c48a10;
+  --accent:     #ffcc00;
+  --accent-dark:#ec7724;
+  --purple:     #74195f;
   --cream:      #f7f2e8;
   --white:      #ffffff;
   --text:       #1a1a1a;
@@ -33,9 +34,8 @@ nav {
   justify-content: space-between;
   padding: 0 2.5rem;
   height: 68px;
-  background: rgba(13,43,26,0.95);
+  background: var(--accent-dark);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav-logo {
@@ -231,13 +231,13 @@ section { padding: 5rem 2rem; }
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.4rem, 5vw, 3.8rem);
-  color: var(--green-dark);
+  color: var(--accent-dark);
   line-height: 1;
   margin-bottom: 1rem;
 }
 
 .section-title.light { color: var(--white); }
-.section-tag.light { color: var(--accent); }
+.section-tag.light { color: var(--purple); }
 
 .section-desc {
   font-size: 1.05rem;
@@ -441,7 +441,7 @@ section { padding: 5rem 2rem; }
 
 /* ===== RESERVAS ===== */
 #reservas {
-  background: var(--green);
+  background: linear-gradient(to bottom, var(--white) 25%, var(--accent) 75%);
   text-align: center;
   position: relative;
   overflow: hidden;
