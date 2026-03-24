@@ -11,7 +11,8 @@
   --cream:        #f7f2e8;
   --white:        #ffffff;
   --text:         #1a1a1a;
-  --text-muted:   #5a6a5e;
+  --text-muted:   #6a645a;
+  --info-box:     #c4c4c498;
   --radius:     12px;
 }
 
@@ -393,7 +394,7 @@ section { padding: 5rem 2rem; }
 
 /* ===== TARIFAS ===== */
 #tarifas {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .tarifas-grid {
@@ -502,49 +503,6 @@ section { padding: 5rem 2rem; }
   letter-spacing: 4px;
 }
 
-.reservas-inner { position: relative; z-index: 1; }
-.reservas-inner .section-desc {
-  color: rgba(255,255,255,0.72);
-  margin: 0 auto 2.5rem;
-  max-width: 500px;
-}
-
-.reservas-steps {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-
-.res-step {
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
-  max-width: 140px;
-}
-.res-step .num {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  border: 2px solid rgba(255,255,255,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  color: var(--accent);
-}
-.res-step p {
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-align: center;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.4;
-}
-
 .btn-reserva {
   display: inline-block;
   background: var(--accent);
@@ -648,72 +606,14 @@ section { padding: 5rem 2rem; }
   gap: .5rem;
 }
 
-/* ===== SOBRE NOSOTROS ===== */
-#sobre-nosotros {
-  background: var(--cream);
+/* ===== DONDE ESTAMOS ===== */
+#donde-estamos {
+  background: var(--white);
 }
-
-.about-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.about-visual {
-  background: var(--green-dark);
-  border-radius: 20px;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8rem;
-  position: relative;
-  overflow: hidden;
-}
-.about-visual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
-    transparent 1px, transparent 40px
-  ),
-  repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
-    transparent 1px, transparent 40px
-  );
-}
-.about-visual .big-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 10rem;
-  color: rgba(232,168,32,0.18);
-  position: absolute;
-  letter-spacing: -4px;
-}
-.about-visual .center-icon { position: relative; z-index: 1; font-size: 5rem; }
-
-.about-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .7rem;
-  margin-top: 2rem;
-}
-.pill {
-  background: var(--green);
-  color: var(--white);
-  border-radius: 50px;
-  padding: .45rem 1.1rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-.pill.gold { background: var(--accent); color: var(--green-dark); }
 
 /* ===== MAPA ===== */
 #donde-estamos {
-  background: var(--green-dark);
+  background: var(--cream);
   padding-bottom: 0;
 }
 
@@ -724,10 +624,6 @@ section { padding: 5rem 2rem; }
   align-items: start;
   padding-bottom: 5rem;
 }
-
-.map-info h2 { color: var(--white); }
-.map-info .section-tag { color: var(--accent); }
-.map-info .section-desc { color: rgba(255,255,255,0.65); }
 
 .contact-items {
   margin-top: 2rem;
@@ -742,7 +638,7 @@ section { padding: 5rem 2rem; }
 }
 .contact-item .ci-icon {
   width: 42px; height: 42px;
-  background: rgba(255,255,255,0.08);
+  background: var(--info-box);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -752,16 +648,16 @@ section { padding: 5rem 2rem; }
 }
 .contact-item .ci-text strong {
   display: block;
-  color: var(--white);
+  color: var(--text);
   font-weight: 800;
   font-size: 0.88rem;
 }
 .contact-item .ci-text span {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-muted);
   font-size: 0.88rem;
 }
 .contact-item .ci-text a {
-  color: var(--accent);
+  color: var(--purple);
   text-decoration: none;
 }
 .contact-item .ci-text a:hover { text-decoration: underline; }
@@ -770,7 +666,7 @@ section { padding: 5rem 2rem; }
   border-radius: var(--radius);
   overflow: hidden;
   height: 360px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 40px var(--purple-ligth);
 }
 .map-embed iframe {
   width: 100%;
