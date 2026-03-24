@@ -749,30 +749,20 @@ textarea { min-height: 130px; resize: vertical; }
 
 /* ===== FOOTER ===== */
 footer {
-  background: var(--green-dark);
+  background: var(--purple);
   color: rgba(255,255,255,0.6);
-  padding: 3rem 2rem;
+  padding: 1.2rem 2rem;
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  color: var(--white);
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: .5rem;
-}
-.footer-logo span { color: var(--accent); }
+
 footer p { font-size: 0.85rem; margin-bottom: .3rem; }
 footer a { color: var(--accent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 .footer-bottom {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: .3rem;
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.3);
+  color: var(--info-box);
 }
 
 /* ===== ANIMATIONS ===== */
