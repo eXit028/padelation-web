@@ -606,14 +606,10 @@ section { padding: 5rem 2rem; }
   gap: .5rem;
 }
 
+
 /* ===== DONDE ESTAMOS ===== */
 #donde-estamos {
   background: var(--white);
-}
-
-/* ===== MAPA ===== */
-#donde-estamos {
-  background: var(--cream);
   padding-bottom: 0;
 }
 
@@ -638,7 +634,7 @@ section { padding: 5rem 2rem; }
 }
 .contact-item .ci-icon {
   width: 42px; height: 42px;
-  background: var(--info-box);
+  background: var(--cream);
   border-radius: 10px;
   display: flex;
   align-items: center;
