@@ -25,32 +25,39 @@
     <div class="container">
       <div class="section-tag">Nuestras instalaciones</div>
       <h2 class="section-title">La pista</h2>
-      <p class="section-desc">Una instalación pensada para que solo tengas que pensar en jugar bien. Ponemos a tu disposición cómodos vestuarios completamente equipados, con duchas amplias 
+      <p class="section-desc">Una instalación pensada para que solo tengas que pensar en jugar bien. Ponemos a tu disposición cómodos vestuarios completamente equipados, con duchas amplias
       y funcionales para que puedas relajarte después de cada partido.</p>
-      <div class="slider-wrap">
-        <div class="slider">
-          <div class="slider-track">
-            <div class="slide active">
-              <img src="../assets/images/galeria/pista.jpg" alt="Pista principal" class="slide-img" />
-              <div class="slide-label">Pista principal</div>
+
+      <div class="instalaciones-grid">
+        <!-- SLIDER -->
+        <div class="slider-wrap">
+          <div class="slider">
+            <div class="slider-track">
+              <div class="slide active">
+                <img src="../assets/images/galeria/pista.jpg" alt="Pista principal" class="slide-img" />
+                <div class="slide-label">Pista principal</div>
+              </div>
+              <div class="slide">
+                <img src="../assets/images/galeria/vestuario1.jpg" alt="Vestuario" class="slide-img" />
+                <div class="slide-label">Vestuario</div>
+              </div>
+              <div class="slide">
+                <img src="../assets/images/galeria/vestuario2.jpg" alt="Vestuario" class="slide-img" />
+                <div class="slide-label">Vestuario</div>
+              </div>
             </div>
-            <div class="slide">
-              <img src="../assets/images/galeria/vestuario1.jpg" alt="Vestuario" class="slide-img" />
-              <div class="slide-label">Vestuario</div>
-            </div>
-            <div class="slide">
-              <img src="../assets/images/galeria/vestuario2.jpg" alt="Vestuario" class="slide-img" />
-              <div class="slide-label">Vestuario</div>
-            </div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#10094;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#10095;</button>
           </div>
-          <button class="slider-btn slider-prev" aria-label="Anterior">&#10094;</button>
-          <button class="slider-btn slider-next" aria-label="Siguiente">&#10095;</button>
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
         </div>
-        <div class="slider-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+
+        <!-- WIDGET METEOROLOGÍA -->
+        <div class="weather-widget" id="weather-widget"></div>
       </div>
     </div>
   </section>
