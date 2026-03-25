@@ -323,6 +323,7 @@ section { padding: 5rem 2rem; }
   justify-content: center;
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
+  color: var(--white);
 }
 
 .step-card h3 {
@@ -375,11 +376,12 @@ section { padding: 5rem 2rem; }
   border-color: var(--accent);
 }
 .act-card:hover h3,
-.act-card:hover p {
+.act-card:hover p,
+.act-card:hover .emoji {
   color: var(--text);
 }
 
-.act-card .emoji { font-size: 2.2rem; margin-bottom: 1rem; }
+.act-card .emoji { font-size: 2.2rem; margin-bottom: 1rem; color: var(--white); }
 .act-card h3 { color: var(--white); font-size: 1.15rem; font-weight: 800; margin-bottom: .5rem; }
 .act-card p { color: rgba(255,255,255,0.62); font-size: 0.9rem; line-height: 1.6; }
 
@@ -793,6 +795,7 @@ section { padding: 5rem 2rem; }
   justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
+  color: var(--purple);
 }
 .contact-item .ci-text strong {
   display: block;
