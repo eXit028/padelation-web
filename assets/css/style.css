@@ -1,8 +1,4 @@
 :root {
-  --green-dark:   #0d2b1a;
-  --green:        #1a5c35;
-  --green-mid:    #2e7d52;
-  --green-light:  #4aab73;
   --accent:       #ffcc00;
   --accent-dark:  #ec7724;
   --purple:       #74195f;
@@ -141,22 +137,6 @@ nav {
   overflow: hidden;
 }
 
-
-.hero-badge {
-  display: inline-block;
-  background: rgba(232,168,32,0.18);
-  border: 1px solid rgba(232,168,32,0.45);
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: .35rem 1rem;
-  border-radius: 50px;
-  margin-bottom: 1.4rem;
-  animation: fadeDown .6s ease both;
-}
-
 .hero-logo {
   height: clamp(6rem, 16vw, 14rem);
   width: auto;
@@ -164,16 +144,6 @@ nav {
   margin: 0 auto 2rem;
   filter: none;
   animation: fadeDown .7s .1s ease both;
-}
-
-.hero-sub {
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
-  color: rgba(255,255,255,0.75);
-  max-width: 580px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.6;
-  font-weight: 600;
-  animation: fadeDown .7s .2s ease both;
 }
 
 .hero-actions {
@@ -329,7 +299,7 @@ section { padding: 5rem 2rem; }
 .step-card h3 {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--green-dark);
+  color: var(--text);
   margin-bottom: .5rem;
 }
 .step-card p {
@@ -386,17 +356,6 @@ section { padding: 5rem 2rem; }
 .act-card p { color: rgba(255,255,255,0.62); font-size: 0.9rem; line-height: 1.6; }
 
 /* ===== AVISO TARIFAS ===== */
-.tarifas-header-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-}
-.tarifas-header-row > div:first-child {
-  flex: 1;
-  min-width: 200px;
-}
 .aviso-reservas {
   background: var(--purple);
   border-radius: var(--radius);
@@ -463,7 +422,7 @@ section { padding: 5rem 2rem; }
 .tarifa-header p { font-size: 0.82rem; color: rgba(255,255,255,0.72); font-weight: 600; }
 
 .tarifa-header.featured { background: var(--accent); }
-.tarifa-header.featured { color: var(--green-dark); }
+.tarifa-header.featured { color: var(--text); }
 .tarifa-header.featured p { color: rgba(13,43,26,0.7); }
 
 .tarifa-body { padding: 1.2rem 1.8rem; }
@@ -534,25 +493,6 @@ section { padding: 5rem 2rem; }
   white-space: nowrap;
   pointer-events: none;
   letter-spacing: 4px;
-}
-
-.btn-reserva {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--green-dark);
-  padding: 1.1rem 3rem;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: background .2s, transform .15s, box-shadow .2s;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.2);
-  letter-spacing: .5px;
-}
-.btn-reserva:hover {
-  background: var(--accent-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 36px rgba(0,0,0,0.28);
 }
 
 /* ===== INSTALACIONES ===== */
@@ -683,13 +623,6 @@ section { padding: 5rem 2rem; }
 }
 .slide.active { opacity: 1; pointer-events: auto; }
 
-/* Placeholder court visuals */
-.slide.court-1 { background: linear-gradient(135deg, #1a5c35 0%, #2e7d52 50%, #1a5c35 100%); }
-.slide.court-2 { background: linear-gradient(135deg, #0d2b1a 0%, #1a5c35 100%); }
-.slide.court-3 { background: linear-gradient(135deg, #2e7d52 0%, #4aab73 100%); }
-.slide.court-4 { background: linear-gradient(135deg, #1a5c35 0%, #0d2b1a 100%); }
-.slide.court-5 { background: linear-gradient(135deg, #4aab73 0%, #2e7d52 100%); }
-
 .slide-label {
   position: absolute;
   bottom: 1rem; left: 50%; transform: translateX(-50%);
@@ -709,12 +642,6 @@ section { padding: 5rem 2rem; }
   height: 100%;
   object-fit: contain;
   background:var(--white);
-}
-
-.slider-placeholder-svg {
-  width: 40%;
-  height: 55%;
-  opacity: 0.25;
 }
 
 .slider-btn {
