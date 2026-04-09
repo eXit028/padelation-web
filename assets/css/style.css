@@ -118,7 +118,6 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
 }
 
 /* ===== HERO ===== */
@@ -133,7 +132,6 @@ nav {
   justify-content: center;
   text-align: center;
   padding: 6rem 2rem 4rem;
-  position: relative;
   overflow: hidden;
 }
 
@@ -142,7 +140,6 @@ nav {
   width: auto;
   display: block;
   margin: 0 auto 2rem;
-  filter: none;
   animation: fadeDown .7s .1s ease both;
 }
 
@@ -238,7 +235,6 @@ section { padding: 5rem 2rem; }
 }
 
 .section-title.light { color: var(--white); }
-.section-tag.light { color: var(--purple); }
 
 .section-desc {
   font-size: 1.05rem;
@@ -355,35 +351,6 @@ section { padding: 5rem 2rem; }
 .act-card h3 { color: var(--white); font-size: 1.15rem; font-weight: 800; margin-bottom: .5rem; }
 .act-card p { color: rgba(255,255,255,0.62); font-size: 0.9rem; line-height: 1.6; }
 
-/* ===== AVISO TARIFAS ===== */
-.aviso-reservas {
-  background: var(--purple);
-  border-radius: var(--radius);
-  padding: 1.2rem 1.5rem;
-  max-width: 340px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 16px var(--purple-ligth);
-}
-.aviso-titulo {
-  font-weight: 800;
-  color: var(--white);
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.7rem;
-  text-transform: uppercase;
-}
-.aviso-reservas ul {
-  padding-left: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.aviso-reservas li {
-  font-size: 0.88rem;
-  color: var(--white);
-  line-height: 1.5;
-}
-
 /* ===== TARIFAS ===== */
 #tarifas {
   background: var(--white);
@@ -421,8 +388,10 @@ section { padding: 5rem 2rem; }
 }
 .tarifa-header p { font-size: 0.82rem; color: rgba(255,255,255,0.72); font-weight: 600; }
 
-.tarifa-header.featured { background: var(--accent); }
-.tarifa-header.featured { color: var(--text); }
+.tarifa-header.featured { 
+  background: var(--accent); 
+  color: var(--text);
+}
 .tarifa-header.featured p { color: rgba(13,43,26,0.7); }
 
 .tarifa-body { padding: 1.2rem 1.8rem; }
@@ -493,6 +462,42 @@ section { padding: 5rem 2rem; }
   white-space: nowrap;
   pointer-events: none;
   letter-spacing: 4px;
+}
+ .reservas-iframe{
+  border:none; 
+  border-radius:12px; 
+  margin-top:2rem;
+ }
+
+/* ===== AVISO RESERVAS ===== */
+.aviso-reservas {
+  margin: 1.5rem auto 0;
+  background: var(--purple);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  max-width: 600px;
+  text-align: left;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px var(--purple-ligth);
+}
+.aviso-titulo {
+  font-weight: 800;
+  color: var(--white);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+.aviso-reservas ul {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.aviso-reservas li {
+  font-size: 0.88rem;
+  color: var(--white);
+  line-height: 1.5;
 }
 
 /* ===== INSTALACIONES ===== */
