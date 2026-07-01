@@ -1,26 +1,38 @@
+<!--
+  ============================================================
+  PÁGINA: Instalaciones
+  Muestra un carrusel (slider) de fotos de la pista/vestuarios y,
+  al lado, un widget que consulta el tiempo en tiempo real. El
+  slider se controla con JS (main.js -> initSlider) y el tiempo se
+  descarga de una API externa gratuita (main.js -> initWeather).
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
+  <!-- OJO: como este fichero está dentro de pages/, las rutas a assets/
+       llevan "../" delante para subir un nivel y llegar a la raíz -->
   <link rel="icon" type="image/png" href="../assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
 
   <!-- NAV -->
+  <!-- Se rellena con components/nav.html vía JavaScript, ver main.js -->
   <div id="nav-placeholder"></div>
-  
+
   <!-- INSTALACIONES -->
   <section id="instalaciones">
     <div class="container">
@@ -29,11 +41,17 @@
       <p class="section-desc">Una instalación pensada para que solo tengas que pensar en jugar bien. Ponemos a tu disposición cómodos vestuarios completamente equipados, con duchas amplias
       y funcionales para que puedas relajarte después de cada partido.</p>
 
+      <!-- .instalaciones-grid = 2 columnas: slider de fotos + widget del tiempo -->
       <div class="instalaciones-grid">
-        <!-- SLIDER -->
+        <!-- SLIDER: para añadir/quitar una foto hay que:
+             1) Añadir/quitar un bloque <div class="slide"> con su <img>
+             2) Añadir/quitar un <span class="dot"> a juego en .slider-dots
+             (deben ir siempre en el mismo orden y ser el mismo número) -->
         <div class="slider-wrap">
           <div class="slider">
             <div class="slider-track">
+              <!-- "active" marca la diapositiva/punto que se ve en cada momento;
+                   initSlider() en main.js mueve esta clase al pulsar flechas o puntos -->
               <div class="slide active">
                 <img src="../assets/images/galeria/pista.jpg" alt="Pista principal" class="slide-img" />
                 <div class="slide-label">Pista principal</div>
@@ -57,15 +75,18 @@
           </div>
         </div>
 
-        <!-- WIDGET METEOROLOGÍA -->
+        <!-- WIDGET METEOROLOGÍA: este div empieza vacío, main.js (initWeather)
+             lo rellena con el contenido tras consultar la API Open-Meteo -->
         <div class="weather-widget" id="weather-widget"></div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
+  <!-- Se rellena con components/footer.html vía JavaScript, ver main.js -->
   <div id="footer-placeholder"></div>
 
+  <!-- Debe ir al final del <body> para que el HTML ya exista cuando el JS lo use -->
   <script src="../assets/js/main.js"></script>
 
 

@@ -1,7 +1,30 @@
+<!--
+  ============================================================
+  COMPONENTE: Navegación (barra superior de la web)
+  ============================================================
+  Este fichero NO se abre nunca directamente en el navegador.
+  main.js (función loadComponents) lo descarga con fetch() y lo
+  inyecta dentro de <div id="nav-placeholder"> en cada página.
+  Por eso está SOLO UNA VEZ: si cambias un enlace o el texto del
+  menú aquí, cambia automáticamente en todas las páginas.
+
+  Los enlaces de abajo están escritos como si el fichero estuviera
+  en la raíz del proyecto (ej: "pages/tarifas.html"). Como este
+  componente se usa también dentro de pages/, main.js corrige las
+  rutas sobre la marcha con la función fixNavLinks() para que
+  funcionen igual desde cualquier página. No hace falta tocar nada
+  al añadir enlaces, solo escribirlos "como si estuvieras en la raíz".
+  ============================================================
+-->
 <nav>
+  <!-- Logo: al hacer click siempre vuelve al inicio -->
   <a href="index.html" class="nav-logo">
     <img src="assets/images/logo/logo_web.png" alt="Padelation" class="nav-logo-img" />
   </a>
+
+  <!-- Enlaces del menú. Los que apuntan a "index.html#..." son anclas:
+       llevan a una sección concreta de la home (ver id="como-funciona"
+       e id="actividades" en index.html) -->
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="pages/instalaciones.html">Instalaciones</a></li>
@@ -10,7 +33,7 @@
     <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
     <li><a href="index.html#actividades">Actividades</a></li>
     <li><a href="pages/contacto.html">Contacto</a></li>
+    <!-- class="nav-cta" = botón destacado en amarillo (ver .nav-cta en style.css) -->
     <li><a href="pages/reservas.html" class="nav-cta">Reservar</a></li>
   </ul>
 </nav>
- 

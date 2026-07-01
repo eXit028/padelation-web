@@ -1,37 +1,50 @@
+<!--
+  ============================================================
+  PÁGINA: Dónde estamos
+  Datos de ubicación/contacto + mapa de Google Maps embebido
+  (mediante un <iframe>, es decir, una "ventana" que muestra otra
+  página web -Google Maps- dentro de la nuestra).
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
+  <!-- OJO: como este fichero está dentro de pages/, las rutas a assets/
+       llevan "../" delante para subir un nivel y llegar a la raíz -->
   <link rel="icon" type="image/png" href="../assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <!-- Font Awesome -->
+  <!-- Font Awesome: librería de iconos (los usamos con <i class="fa-solid fa-..."></i>) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
   <!-- NAV -->
+  <!-- Se rellena con components/nav.html vía JavaScript, ver main.js -->
   <div id="nav-placeholder"></div>
 
 
   <!-- DÓNDE ESTAMOS -->
   <section id="donde-estamos">
     <div class="container">
+      <!-- .map-inner divide en 2 columnas: info a la izquierda, mapa a la derecha -->
       <div class="map-inner">
         <div>
           <div class="section-tag">Ubicación</div>
           <h2 class="section-title">¿Dónde estamos?</h2>
           <p class="section-desc">A solo unos minutos de Zaragoza, en Cuarte de Huerva. Fácil acceso y zona de aparcamiento.</p>
+          <!-- Lista de datos de contacto, cada uno con icono + texto -->
           <div class="contact-items">
             <div class="contact-item">
               <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -63,6 +76,10 @@
             </div>
           </div>
         </div>
+        <!-- Mapa embebido: para obtener esta URL, en Google Maps se busca
+             el sitio -> Compartir -> Insertar un mapa -> copiar el "src"
+             del iframe que genera Google. Si algún día cambia la ubicación,
+             hay que repetir ese proceso y reemplazar este "src". -->
         <div class="map-embed">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.455493049377!2d-0.9301433298191967!3d41.60657876092159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd596a985a521ed9%3A0x51693b99b0b38d5a!2sPadelation!5e1!3m2!1ses!2ses!4v1774365322555!5m2!1ses!2ses"
@@ -77,8 +94,10 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- Se rellena con components/footer.html vía JavaScript, ver main.js -->
   <div id="footer-placeholder"></div>
 
+  <!-- Debe ir al final del <body> para que el HTML ya exista cuando el JS lo use -->
   <script src="../assets/js/main.js"></script>
 
 </body>

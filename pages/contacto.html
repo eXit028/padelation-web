@@ -1,32 +1,47 @@
+<!--
+  ============================================================
+  PÁGINA: Contacto
+  Formulario de contacto. No envía datos a ningún servidor: al
+  pulsar "Enviar mensaje" se abre el programa de correo del usuario
+  con un mailto: ya rellenado (asunto y cuerpo del mensaje). Toda
+  la lógica de armar ese mailto está en main.js -> initContactForm().
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
+  <!-- OJO: como este fichero está dentro de pages/, las rutas a assets/
+       llevan "../" delante para subir un nivel y llegar a la raíz -->
   <link rel="icon" type="image/png" href="../assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
 
   <!-- NAV -->
+  <!-- Se rellena con components/nav.html vía JavaScript, ver main.js -->
   <div id="nav-placeholder"></div>
-  
+
   <!-- CONTACTO -->
   <section id="contacto">
     <div class="container">
       <div class="section-tag">Escríbenos</div>
       <h2 class="section-title">Contacto</h2>
       <p class="tarifa-note">Este formulario abre tu cliente de correo (Outlook, Gmail, etc.).<br>Si no tienes uno configurado, escríbenos directamente a contacto@padelation.es desde tu app de confianza.</p>
+
+      <!-- .contact-form-grid divide la sección en 2 columnas (CSS grid):
+           a la izquierda info/avisos, a la derecha el formulario -->
       <div class="contact-form-grid">
         <div class="form-info">
           <p class="section-desc">¿Tienes alguna duda sobre reservas, tarifas o franquicias? Escríbenos y te respondemos lo antes posible.</p>
@@ -39,6 +54,10 @@
             <p>Si quieres abrir tu propio centro Padelation, indica "Franquicia" en el asunto del mensaje y te lo explicamos todo.</p>
           </div>
         </div>
+
+        <!-- El atributo "action" de aquí NO se usa realmente: el submit
+             se intercepta en JS (initContactForm) y se construye un
+             mailto: propio, así que puedes ignorar action/method. -->
         <form action="mailto:contacto@padelation.es" method="GET" onsubmit="return handleForm(event)">
           <div class="form-row">
             <div class="field">
@@ -52,6 +71,7 @@
           </div>
           <div class="field">
             <label for="asunto">Asunto</label>
+            <!-- El texto elegido aquí se usa como "subject" del email -->
             <select id="asunto" name="asunto">
               <option value="">Selecciona un tema...</option>
               <option>Información sobre reservas</option>
@@ -72,8 +92,10 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- Se rellena con components/footer.html vía JavaScript, ver main.js -->
   <div id="footer-placeholder"></div>
 
+  <!-- Debe ir al final del <body> para que el HTML ya exista cuando el JS lo use -->
   <script src="../assets/js/main.js"></script>
 
 

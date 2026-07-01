@@ -1,31 +1,46 @@
+<!--
+  ============================================================
+  PÁGINA: Reservas
+  Aquí no se construye ningún sistema de reservas propio: se
+  incrusta (con un <iframe>) el software externo de reservas que
+  ya usa Padelation, apuntando a su URL/IP. Si esa URL cambiara en
+  el futuro (nuevo proveedor, nuevo dominio...), solo hay que
+  actualizar el "src" del iframe de más abajo.
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
+  <!-- OJO: como este fichero está dentro de pages/, las rutas a assets/
+       llevan "../" delante para subir un nivel y llegar a la raíz -->
   <link rel="icon" type="image/png" href="../assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
 
   <!-- NAV -->
+  <!-- Se rellena con components/nav.html vía JavaScript, ver main.js -->
   <div id="nav-placeholder"></div>
-  
+
   <!-- RESERVAS -->
   <section id="reservas">
     <div class="container">
       <div class="section-tag">Rápido y sencillo</div>
       <h2 class="section-title">Reserva tu pista</h2>
+      <!-- Bloque de condiciones/normas de reserva. Si cambian las normas
+           del club, este es el único sitio donde hay que editarlas -->
       <div class="aviso-reservas">
         <div class="aviso-titulo">Aviso importante</div>
         <ul>
@@ -35,13 +50,17 @@
           <li>Luz <strong>siempre necesaria</strong>.</li>
         </ul>
       </div>
+      <!-- Software de reservas de terceros embebido vía iframe.
+           "81.0.62.5:82" es la IP y puerto del servidor de reservas. -->
       <iframe src="http://81.0.62.5:82/0.aspx" width="100%" height="1400" class="reservas-iframe"></iframe>
     </div>
   </section>
 
   <!-- FOOTER -->
+  <!-- Se rellena con components/footer.html vía JavaScript, ver main.js -->
   <div id="footer-placeholder"></div>
 
+  <!-- Debe ir al final del <body> para que el HTML ya exista cuando el JS lo use -->
   <script src="../assets/js/main.js"></script>
 
 </body>

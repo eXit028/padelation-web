@@ -1,35 +1,56 @@
+<!--
+  ============================================================
+  PÁGINA DE INICIO (Home)
+  Esta es la "portada" de la web. Se compone de 3 bloques (secciones):
+    1) HERO          -> lo primero que se ve, con el logo y botones grandes
+    2) CÓMO FUNCIONA -> 4 pasos explicando el proceso de reserva
+    3) ACTIVIDADES   -> tarjetas con los tipos de uso de la pista
+
+  La barra de navegación (nav) y el pie de página (footer) NO están
+  escritos aquí: viven en components/nav.html y components/footer.html
+  y se insertan automáticamente con JavaScript (ver assets/js/main.js,
+  función loadComponents). Así evitamos copiar el mismo menú en cada
+  página. Si quieres cambiar el menú o el footer, edita esos 2 ficheros
+  y se actualizará en TODAS las páginas a la vez.
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
   <link rel="icon" type="image/png" href="assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Font Awesome -->
+  <!-- Font Awesome: librería de iconos (los usamos con <i class="fa-solid fa-..."></i>) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <!-- NAV -->
+  <!-- Aquí no hay nada escrito a mano: main.js rellena este div con el
+       contenido de components/nav.html en cuanto carga la página. -->
   <div id="nav-placeholder"></div>
 
-  <!-- HERO -->
+  <!-- HERO: primer bloque grande que se ve al entrar (logo + botones + stats) -->
   <section id="inicio">
     <!-- ============================================================
          PATROCINADOR IZQUIERDO
-         Para activar: descomenta <a> y <img>, borra el <span>
-         Sustituye "URL_LOGO" por la ruta al logo del patrocinador
-         Sustituye "https://web-patrocinador.com" por su enlace
-         Tamaño de imagen 140 x 400 px
+         De momento solo se muestra un cartel de "anúnciate aquí".
+         Para activar un patrocinador real:
+           1) Descomenta las líneas <a> e <img> de abajo
+           2) Borra (o comenta) el <span> de "ANÚNCIATE AQUÍ"
+           3) Sustituye "URL_LOGO" por la ruta a la imagen del logo
+           4) Sustituye "https://web-patrocinador.com" por el enlace del patrocinador
+           Tamaño de imagen recomendado: 140 x 400 px (mismo tamaño que la franja)
          ============================================================ -->
     <div class="sponsor-strip sponsor-left">
       <!--<a href="URL_LOGO" target="_blank" rel="noopener" class="sponsor-link">
@@ -48,12 +69,18 @@
       <span class="sponsor-text">ANÚNCIATE AQUÍ</span>
       <span class="sponsor-contact">CONTÁCTANOS: contacto@padelation.es</span>
     </div>
+
+    <!-- Contenido central del hero: logo, botones y las 4 estadísticas -->
     <div>
       <img src="assets/images/logo/logo_web.png" alt="Padelation" class="hero-logo" />
+
+      <!-- Botones principales de llamada a la acción (CTA) -->
       <div class="hero-actions">
         <a href="pages/reservas.html" class="btn-primary">Reservar pista</a>
         <a href="pages/tarifas.html" class="btn-secondary">Ver tarifas</a>
       </div>
+
+      <!-- Bloque de 4 datos destacados (24H, 365 días, precio desde, sin cuotas) -->
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-value">24H</div>
@@ -72,17 +99,18 @@
           <div class="stat-label">Cuotas</div>
         </div>
       </div>
-
-      
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
+  <!-- CÓMO FUNCIONA: 4 tarjetas numeradas explicando el proceso paso a paso -->
   <section id="como-funciona">
     <div class="container">
       <div class="section-tag">Simple y sin barreras</div>
       <h2 class="section-title">¿Cómo funciona?</h2>
       <p class="section-desc">Jugar al pádel nunca fue tan fácil. Sin socios, sin cuotas mensuales, sin horarios fijos.</p>
+      <!-- Cada .step-card es una tarjeta del proceso. El atributo data-num
+           es el número grande y semitransparente que se ve de fondo en la
+           tarjeta (se dibuja con CSS, ver .step-card::before en style.css) -->
       <div class="steps-grid">
         <div class="step-card" data-num="1">
           <div class="step-icon"><i class="fa-solid fa-calendar-days"></i></div>
@@ -108,7 +136,7 @@
     </div>
   </section>
 
-  <!-- ACTIVIDADES -->
+  <!-- ACTIVIDADES: tarjetas con las distintas formas de usar la pista -->
   <section id="actividades">
     <div class="container">
       <div class="section-tag">Para todos los niveles</div>
@@ -140,8 +168,11 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- Igual que el nav-placeholder: main.js inserta aquí components/footer.html -->
   <div id="footer-placeholder"></div>
-  
+
+  <!-- Este script debe ir SIEMPRE al final del <body>: así el HTML ya
+       existe en la página cuando el JS intenta buscarlo/manipularlo -->
   <script src="assets/js/main.js"></script>
 
 

@@ -1,3 +1,32 @@
+/*
+  ============================================================
+  HOJA DE ESTILOS DE PADELATION
+  ============================================================
+  Este fichero da estilo a TODAS las páginas de la web (index.html
+  y todo lo de pages/). Está organizado en bloques con títulos tipo
+  "===== NOMBRE =====", normalmente en el mismo orden en el que
+  aparecen las secciones en el HTML (nav, hero, cómo funciona,
+  actividades, tarifas, reservas, instalaciones, dónde estamos,
+  contacto, footer, animaciones y, al final, los ajustes para móvil).
+
+  Para encontrar el estilo de algo rápido: busca (Ctrl+F) el id o
+  clase que veas en el HTML, por ejemplo "#tarifas" o ".tarifa-card".
+
+  CONCEPTOS BÁSICOS usados en este fichero (por si se te olvidan):
+  - :root { --nombre: valor; } define "variables CSS". Se usan luego
+    como var(--nombre). Sirve para no repetir el mismo color/medida
+    100 veces: si cambias el valor aquí arriba, cambia en toda la web.
+  - display:flex / display:grid organizan varios elementos en fila,
+    columna o rejilla sin tener que calcular posiciones a mano.
+  - Los selectores con "::before" / "::after" crean un elemento
+    decorativo extra que no existe en el HTML (p.ej. el número de
+    fondo de las tarjetas de "Cómo funciona").
+  - "@media (max-width: 900px) { ... }" son reglas que SOLO se
+    aplican cuando la pantalla mide 900px o menos (móvil/tablet).
+    Están al final del fichero.
+  ============================================================
+*/
+
 :root {
   /* Colores de marca */
   --accent:       #ffcc00;
@@ -954,13 +983,23 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ===== ANIMATIONS ===== */
+/* @keyframes define los "fotogramas" de una animación (from = inicio,
+   to = final). Se usa luego con "animation: fadeDown ..." (ver .hero-logo,
+   .hero-actions, .hero-stats): hace que el elemento aparezca desde
+   arriba con un fundido, en vez de aparecer de golpe. */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE =====
+   A partir de aquí, reglas que SOLO se aplican en pantallas pequeñas.
+   Se van "sobrescribiendo" los estilos de arriba (por eso muchas veces
+   solo cambian grid-template-columns a 1fr, es decir, pasar de varias
+   columnas a una sola apilada verticalmente). */
 @media (max-width: 900px) {
+  /* En tablet/móvil se oculta el menú de texto (algo habitual sería
+     sustituirlo por un menú "hamburguesa", pero aquí no está implementado) */
   .nav-links { display: none; }
 
   .instalaciones-grid { grid-template-columns: 1fr; }
@@ -973,6 +1012,7 @@ footer a:hover { text-decoration: underline; }
   .map-embed { height: 260px; }
 }
 
+/* Pantallas muy pequeñas (móviles estrechos): reducir márgenes/espacios */
 @media (max-width: 560px) {
   nav { padding: 0 1.2rem; }
   section { padding: 3.5rem 1.2rem; }

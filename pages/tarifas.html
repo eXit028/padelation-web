@@ -1,28 +1,41 @@
+<!--
+  ============================================================
+  PÁGINA: Tarifas
+  Muestra los precios en 2 tarjetas (.tarifa-card): una para días
+  laborables (Lunes a Viernes) y otra para fines de semana/festivos.
+  Cada tarjeta tiene filas (.tarifa-row) con un tramo horario y sus
+  precios a 1h / 1,5h. Para actualizar un precio, busca el importe
+  exacto más abajo y cámbialo directamente en el texto.
+  ============================================================
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Codificacion de caracteres -->
+  <!-- Codificacion de caracteres (para que se vean bien las tildes, ñ, etc.) -->
   <meta charset="UTF-8" />
-  <!-- Configuracion para hacer la página responsive -->
+  <!-- Configuracion para hacer la página responsive (se adapta a móvil/tablet/PC) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Título de la pestaña -->
   <title>Padelation 24H </title>
+  <!-- OJO: como este fichero está dentro de pages/, las rutas a assets/
+       llevan "../" delante para subir un nivel y llegar a la raíz -->
   <link rel="icon" type="image/png" href="../assets/images/logo/favicon_web.png" />
-  <!-- Imports para las fuentes de texto de google -->
+  <!-- Imports para las fuentes de texto de google (tipografías "Bebas Neue" y "Nunito") -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Carga del archivo CSS -->
+  <!-- Carga del archivo CSS con todos los estilos de la web -->
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <!-- Font Awesome -->
+  <!-- Font Awesome: librería de iconos (los usamos con <i class="fa-solid fa-..."></i>) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
   <!-- NAV -->
+  <!-- Se rellena con components/nav.html vía JavaScript, ver main.js -->
   <div id="nav-placeholder"></div>
-  
+
   <!-- TARIFAS -->
   <section id="tarifas">
     <div class="container">
@@ -30,6 +43,7 @@
       <h2 class="section-title">Tarifas</h2>
       <p class="section-desc">Precios claros según el tramo horario. Luz siempre necesaria, los precios que
         se muestran a continuacion incluyen su coste.</p>
+      <!-- .tarifas-grid coloca las tarjetas en columnas una al lado de otra -->
       <div class="tarifas-grid">
 
         <!-- L-V -->
@@ -73,6 +87,7 @@
 
         <!-- FIN DE SEMANA -->
         <div class="tarifa-card">
+          <!-- clase "featured" = variante con fondo amarillo destacado -->
           <div class="tarifa-header featured">
             <h3>Sábados, Domingos y Festivos</h3>
             <p>Fines de semana y festivos</p>
@@ -101,8 +116,10 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- Se rellena con components/footer.html vía JavaScript, ver main.js -->
   <div id="footer-placeholder"></div>
 
+  <!-- Debe ir al final del <body> para que el HTML ya exista cuando el JS lo use -->
   <script src="../assets/js/main.js"></script>
 
 </body>
